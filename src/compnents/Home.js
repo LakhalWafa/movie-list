@@ -1,16 +1,21 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from '../context/ThemeContext';
+import { MovieContext } from '../context/MovieContext';
 
 const Home = () => {
   const { isLightTheme, light, dark } = useContext(ThemeContext);
+  const { movies } = useContext(MovieContext);
   const theme = isLightTheme ? light : dark;
   return (
     <div
       className="movie-list"
       style={{ background: theme.bg, color: theme.syntax }}
     >
-      This is a movie list app created with React Hooks and Context. You add a
-      list of movies that you want to watch and delete them afterwards. <br />
+      <p>
+        This is a movie list app created with React Hooks and Context. You add a
+        list of movies that you want to watch and delete them afterwards.
+      </p>
+      <p>Currently you have {movies.length} movies to watch. </p>
       <button
         className="button"
         style={{

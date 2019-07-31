@@ -10,13 +10,13 @@ const Navbar = () => {
       <h1>Movies List</h1>
       <ul>
         <li>
-          <Link to="/" style={{ color: theme.syntax }}>
-            Home
+          <Link to="/" style={{ color: theme.syntax }} className="grow">
+            HOME
           </Link>
         </li>
         <li>
-          <Link to="/movies" style={{ color: theme.syntax }}>
-            Movies
+          <Link to="/movies" style={{ color: theme.syntax }} className="grow">
+            MOVIES
           </Link>
         </li>
       </ul>

@@ -15,10 +15,9 @@ const MovieForm = () => {
   };
   return (
     <form onSubmit={handleSubmit}>
-      <label>Add Movie </label>
       <input
         type="text"
-        placeholder="Movie Title"
+        placeholder="Add Movie"
         value={title}
         onChange={e => setTitle(e.target.value)}
       />

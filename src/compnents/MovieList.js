@@ -10,7 +10,7 @@ const MovieList = () => {
   const { movies, removeMovie } = useContext(MovieContext);
   const { isAuthenticated } = useContext(AuthContext);
   const theme = isLightTheme ? light : dark;
-  return (
+  return movies.length ? (
     <div
       className="movie-list"
       style={{ background: theme.bg, color: theme.syntax }}
@@ -38,6 +38,13 @@ const MovieList = () => {
       ) : (
         <Redirect to="/" />
       )}
+    </div>
+  ) : (
+    <div
+      className="empty"
+      style={{ background: theme.bg, color: theme.syntax }}
+    >
+      No movies to watch! Hello free time...
     </div>
   );
 };

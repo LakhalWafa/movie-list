@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #f2f2f2;
 }
 /* app styles */
 .App {
@@ -28,10 +29,17 @@ a {
   text-decoration: none;
   cursor: pointer;
 }
-
+.grow {
+  transition: all 500ms;
+}
+.grow:hover {
+  font-size: 20px;
+  font-size-adjust: 20px;
+}
 .movie:hover {
   text-decoration: line-through;
   cursor: pointer;
+  opacity: 0.8;
 }
 form input {
   height: 20px;
@@ -53,6 +61,7 @@ form input {
   margin: 10px auto;
   border-radius: 10px;
 }
+
 .button {
   border: none;
   padding: 16px 32px;
@@ -63,4 +72,10 @@ form input {
   margin: 14px 4px;
   cursor: pointer;
   border-radius: 12px;
+}
+.button:hover {
+  opacity: 0.7;
+}
+.empty {
+  padding: 20px;
 }

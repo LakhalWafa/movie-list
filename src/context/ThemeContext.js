@@ -5,14 +5,14 @@ export const ThemeContext = createContext();
 const ThemeContextProvider = props => {
   const [isLightTheme, setIsLightTheme] = useState(true);
   const [light, setLight] = useState({
-    syntax: '#990000',
-    ui: '#ff8080',
-    bg: '#ffe6e6'
+    syntax: '#333333',
+    ui: '#a6a6a6',
+    bg: '#d9d9d9'
   });
   const [dark, setDark] = useState({
-    syntax: '#ffe6e6',
-    ui: '#990000',
-    bg: '#cc0000'
+    syntax: '#d9d9d9',
+    ui: '#333333',
+    bg: '#737373'
   });
   const toggleTheme = () => {
     setIsLightTheme(!isLightTheme);

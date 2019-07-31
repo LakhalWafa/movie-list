@@ -1,28 +1,20 @@
-import React, { Component } from 'react';
+import React, { useContext } from 'react';
 import { ThemeContext } from '../context/ThemeContext';
 
-class ThemeToggle extends Component {
-  render() {
-    return (
-      <ThemeContext.Consumer>
-        {context => {
-          const { isLightTheme, light, dark, toggleTheme } = context;
-          const theme = isLightTheme ? light : dark;
-          return (
-            <button
-              className="button"
-              onClick={toggleTheme}
-              style={{
-                color: theme.syntax,
-                backgroundColor: theme.bg
-              }}
-            >
-              Toggle the theme
-            </button>
-          );
-        }}
-      </ThemeContext.Consumer>
-    );
-  }
-}
+const ThemeToggle = () => {
+  const { isLightTheme, light, dark, toggleTheme } = useContext(ThemeContext);
+  const theme = isLightTheme ? light : dark;
+  return (
+    <button
+      className="button"
+      onClick={toggleTheme}
+      style={{
+        color: theme.syntax,
+        backgroundColor: theme.bg
+      }}
+    >
+      {theme === light ? 'Light' : 'Dark'}
+    </button>
+  );
+};
 export default ThemeToggle;

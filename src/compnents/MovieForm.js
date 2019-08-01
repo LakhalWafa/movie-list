@@ -5,12 +5,12 @@ import { MovieContext } from '../context/MovieContext';
 const MovieForm = () => {
   const [title, setTitle] = useState('');
   const { isLightTheme, light, dark } = useContext(ThemeContext);
-  const { addMovie } = useContext(MovieContext);
+  const { dispatch } = useContext(MovieContext);
   const theme = isLightTheme ? light : dark;
 
   const handleSubmit = e => {
     e.preventDefault();
-    addMovie(title);
+    dispatch({ type: 'ADD_MOVIE', title });
     setTitle('');
   };
   return (

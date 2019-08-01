@@ -7,7 +7,7 @@ import MovieForm from './MovieForm';
 
 const MovieList = () => {
   const { isLightTheme, light, dark } = useContext(ThemeContext);
-  const { movies, removeMovie } = useContext(MovieContext);
+  const { movies, dispatch } = useContext(MovieContext);
   const { isAuthenticated } = useContext(AuthContext);
   const theme = isLightTheme ? light : dark;
   return movies.length ? (
@@ -26,7 +26,9 @@ const MovieList = () => {
                   className="movie"
                   key={movie.id}
                   style={{ background: theme.ui }}
-                  onClick={() => removeMovie(movie.id)}
+                  onClick={() =>
+                    dispatch({ type: 'REMOVE_MOVIE', id: movie.id })
+                  }
                 >
                   {movie.title}
                 </li>
